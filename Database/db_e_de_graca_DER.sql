@@ -6,9 +6,9 @@ CREATE TABLE `tb_usuario` (
 	`nome` varchar(60) NOT NULL,
 	`email` varchar(100) NOT NULL,
 	`senha` varchar(100) NOT NULL,
-	`empresa` BOOLEAN(100) NOT NULL,
+	`empresa` BOOLEAN NOT NULL,
 	PRIMARY KEY (`id`)
-)
+);
 
 CREATE TABLE `tb_tema` (
 	`id` bigint NOT NULL AUTO_INCREMENT,
