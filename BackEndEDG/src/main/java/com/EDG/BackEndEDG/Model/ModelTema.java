@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,23 +24,22 @@ public class ModelTema {
 		@GeneratedValue(strategy = GenerationType.IDENTITY) 
 		private Long id;
 		
-		@NotNull 
+		@NotBlank 
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
 		private String area;
 		
-		@NotNull 
+		@NotBlank 
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
 		private String tipo_de_acao;
 		
-		@NotNull 
-		@Temporal(TemporalType.TIMESTAMP) //tira ou deixa?
+		@NotBlank  
 		private LocalDate data;
 		
-		@NotNull 
+		@NotBlank  
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
 		private String publico;
 		
-		@NotNull 
+		@NotBlank  
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
 		private String cidade;
 		

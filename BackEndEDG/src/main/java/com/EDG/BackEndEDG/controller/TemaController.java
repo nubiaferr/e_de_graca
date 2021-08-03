@@ -1,5 +1,6 @@
 package com.EDG.BackEndEDG.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,11 @@ public class TemaController {
 	@GetMapping("/cidade/{cidade}")
 	public ResponseEntity<List<ModelTema>> GetByCidade (@PathVariable String cidade){
 		return ResponseEntity.ok(repository.findAllByCidadeContainingIgnoreCase(cidade));
+	}
+	
+	@GetMapping("/data/{data}")
+	public ResponseEntity<List<ModelTema>> GetByData (@PathVariable LocalDate data){
+		return ResponseEntity.ok(repository.findAllByData(data));
 	}
 	
 	@PostMapping
