@@ -1,5 +1,6 @@
 package com.EDG.BackEndEDG.Model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -32,7 +33,7 @@ public class ModelTema {
 		
 		@NotNull 
 		@Temporal(TemporalType.TIMESTAMP) //tira ou deixa?
-		private Date data;
+		private LocalDate data;
 		
 		@NotNull 
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
@@ -60,10 +61,11 @@ public class ModelTema {
 		public void setTipo_de_acao(String tipo_de_acao) {
 			this.tipo_de_acao = tipo_de_acao;
 		}
-		public Date getData() {
+	
+		public LocalDate getData() {
 			return data;
 		}
-		public void setData(Date data) {
+		public void setData(LocalDate data) {
 			this.data = data;
 		}
 		public String getPublico() {
