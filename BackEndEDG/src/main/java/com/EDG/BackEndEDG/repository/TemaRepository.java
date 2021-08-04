@@ -14,7 +14,7 @@ import com.EDG.BackEndEDG.Model.ModelTema;
 public interface TemaRepository extends JpaRepository<ModelTema, Long> {
 	
 	public List<ModelTema>findAllByAreaContainingIgnoreCase(String area);
-	public List<ModelTema>findAllByTipoDeAcaoContainingIgnoreCase(String tipo_de_acao);
+	public List<ModelTema>findAllByTipoDeAcaoContainingIgnoreCase(String tipoDeAcao);
 	public List<ModelTema>findAllByPublicoContainingIgnoreCase(String publico);
 	public List<ModelTema>findAllByCidadeContainingIgnoreCase(String cidade);
 	public List<ModelTema>findAllByData (LocalDate data);

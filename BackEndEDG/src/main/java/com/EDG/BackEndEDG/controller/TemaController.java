@@ -44,9 +44,9 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAllByAreaContainingIgnoreCase(area));
 	}
 	
-	@GetMapping("/tipo_de_acao/{tipo_de_acao}")
-	public ResponseEntity<List<ModelTema>> GetByTipodeAcao (@PathVariable String tipo_de_acao){
-		return ResponseEntity.ok(repository.findAllByTipoDeAcaoContainingIgnoreCase(tipo_de_acao));
+	@GetMapping("/tipo-de-acao/{tipoDeAcao}")
+	public ResponseEntity<List<ModelTema>> GetByTipodeAcao (@PathVariable String tipoDeAcao){
+		return ResponseEntity.ok(repository.findAllByTipoDeAcaoContainingIgnoreCase(tipoDeAcao));
 	}
 	
 	@GetMapping("/publico/{publico}")
