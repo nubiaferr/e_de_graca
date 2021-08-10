@@ -42,17 +42,7 @@ public class UsuarioController {
 	public ResponseEntity<List<Usuario>> GetByNome(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
-	
-	@PostMapping
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario post){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
-	}
-	
-	@PutMapping
-	public ResponseEntity<Usuario> Put(@RequestBody Usuario put){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(put));
-	}
-	
+
 	@DeleteMapping("/{id}")
 	public String Delete(@PathVariable long id) {
 		repository.deleteById(id);
