@@ -1,4 +1,4 @@
-package com.EDG.BackEndEDG.Model;
+package com.EDG.BackEndEDG.model;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_tema")
-public class ModelTema {
+public class Tema {
 	
 	// Atributos
 	

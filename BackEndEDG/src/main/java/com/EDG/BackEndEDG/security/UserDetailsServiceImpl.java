@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.EDG.BackEndEDG.Model.Usuario;
+import com.EDG.BackEndEDG.model.Usuario;
 import com.EDG.BackEndEDG.repository.UsuarioRepository;
 
 @Service

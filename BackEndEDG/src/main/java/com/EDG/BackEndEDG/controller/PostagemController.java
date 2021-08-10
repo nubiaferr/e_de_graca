@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.EDG.BackEndEDG.Model.Postagem;
+
+import com.EDG.BackEndEDG.model.Postagem;
 import com.EDG.BackEndEDG.repository.PostagemRepository;
 
 @RestController

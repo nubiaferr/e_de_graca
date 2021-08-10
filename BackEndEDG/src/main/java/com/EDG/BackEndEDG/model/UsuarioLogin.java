@@ -1,4 +1,4 @@
-package com.EDG.BackEndEDG.Model;
+package com.EDG.BackEndEDG.model;
 
 public class UsuarioLogin {
 	

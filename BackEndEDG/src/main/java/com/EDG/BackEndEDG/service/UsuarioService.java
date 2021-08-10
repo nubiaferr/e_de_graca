@@ -5,13 +5,11 @@ import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
-import com.EDG.BackEndEDG.Model.Usuario;
-import com.EDG.BackEndEDG.Model.UsuarioLogin;
+import com.EDG.BackEndEDG.model.Usuario;
+import com.EDG.BackEndEDG.model.UsuarioLogin;
 import com.EDG.BackEndEDG.repository.UsuarioRepository;
 
 @Service
@@ -26,8 +24,8 @@ public class UsuarioService {
 	public Optional <Usuario> cadastrarUsuario (Usuario usuario){
 		
 		if(usuarioRepository.findByEmail(usuario.getEmail()).isPresent()) 
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "E-mail já cadastrado", null);
-		
+			return Optional.ofNullable(null);
+					
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		String senhaEncoder = encoder.encode(usuario.getSenha());
@@ -49,7 +47,7 @@ public class UsuarioService {
 			return Optional.of(usuarioRepository.save(usuario));
 
 		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado", null);
+			return Optional.ofNullable(null);
 		}
 	}
 	
@@ -77,8 +75,7 @@ public class UsuarioService {
 				return usuarioLogin;
 			}
 		}
-		
-		throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "E-mail ou senha inválidos", null);
+		return Optional.ofNullable(null);
 	}
 	
 	

@@ -1,4 +1,4 @@
-package com.EDG.BackEndEDG.Model;
+package com.EDG.BackEndEDG.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,18 +39,18 @@ public class Postagem {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("postagens")
-	private ModelTema tema;
+	private Tema tema;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("postagens")
 	private Usuario usuario;	
 	
 
-	public ModelTema getTema() {
+	public Tema getTema() {
 		return tema;
 	}
 
-	public void setTema(ModelTema tema) {
+	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
 

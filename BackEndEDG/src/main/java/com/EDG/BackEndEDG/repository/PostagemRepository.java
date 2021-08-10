@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.EDG.BackEndEDG.Model.Postagem;
+
+import com.EDG.BackEndEDG.model.Postagem;
 
 @Repository
 public interface PostagemRepository extends JpaRepository<Postagem, Long> {
