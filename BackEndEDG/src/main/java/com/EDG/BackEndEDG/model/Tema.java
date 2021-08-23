@@ -13,7 +13,10 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 
 @Entity
 @Table(name = "tb_tema")
@@ -32,8 +35,8 @@ public class Tema {
 		@NotBlank 
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
 		private String tipoDeAcao;
-		
-		@NotBlank  
+				
+		@JsonFormat(pattern = "yyyy-MM-dd")
 		private LocalDate data;
 		
 		@NotBlank  
