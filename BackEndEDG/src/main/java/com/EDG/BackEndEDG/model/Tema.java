@@ -13,10 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-
 
 @Entity
 @Table(name = "tb_tema")
@@ -30,23 +27,8 @@ public class Tema {
 		
 		@NotBlank 
 		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
-		private String area;
-		
-		@NotBlank 
-		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
-		private String tipoDeAcao;
+		private String titulo;
 				
-		@JsonFormat(pattern = "yyyy-MM-dd")
-		private LocalDate data;
-		
-		@NotBlank  
-		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
-		private String publico;
-		
-		@NotBlank  
-		@Size(min = 1, max = 50, message = "Limite de 50 caracteres")
-		private String cidade;
-		
 		@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 		@JsonIgnoreProperties("tema")
 		private List<Postagem> postagens;
@@ -54,47 +36,29 @@ public class Tema {
 		public List<Postagem> getPostagens() {
 			return postagens;
 		}
-		public void setPostagens(List<Postagem> postagens) {
-			this.postagens = postagens;
-		}
+
 		public Long getId() {
 			return id;
 		}
+
 		public void setId(Long id) {
 			this.id = id;
 		}
-		public String getArea() {
-			return area;
+
+		public String getTitulo() {
+			return titulo;
 		}
-		public void setArea(String area) {
-			this.area = area;
-		}	
+
+		public void setTitulo(String titulo) {
+			this.titulo = titulo;
+		}
+
+		public void setPostagens(List<Postagem> postagens) {
+			this.postagens = postagens;
+		}
 		
-	
-		public String getTipoDeAcao() {
-			return tipoDeAcao;
-		}
-		public void setTipoDeAcao(String tipoDeAcao) {
-			this.tipoDeAcao = tipoDeAcao;
-		}
-		public LocalDate getData() {
-			return data;
-		}
-		public void setData(LocalDate data) {
-			this.data = data;
-		}
-		public String getPublico() {
-			return publico;
-		}
-		public void setPublico(String publico) {
-			this.publico = publico;
-		}
-		public String getCidade() {
-			return cidade;
-		}
-		public void setCidade(String cidade) {
-			this.cidade = cidade;
-		}
+		
+		
 		
 		
 		

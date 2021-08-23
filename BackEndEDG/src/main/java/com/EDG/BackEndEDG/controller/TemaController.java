@@ -39,30 +39,11 @@ public class TemaController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/area/{area}")
-	public ResponseEntity<List<Tema>> GetByArea(@PathVariable String area){
-		return ResponseEntity.ok(repository.findAllByAreaContainingIgnoreCase(area));
+	@GetMapping("/titulo/{titulo}")
+	public ResponseEntity<List<Tema>> GetByArea(@PathVariable String titulo){
+		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
-	@GetMapping("/tipo-de-acao/{tipoDeAcao}")
-	public ResponseEntity<List<Tema>> GetByTipodeAcao (@PathVariable String tipoDeAcao){
-		return ResponseEntity.ok(repository.findAllByTipoDeAcaoContainingIgnoreCase(tipoDeAcao));
-	}
-	
-	@GetMapping("/publico/{publico}")
-	public ResponseEntity<List<Tema>> GetByPublico (@PathVariable String publico){
-		return ResponseEntity.ok(repository.findAllByPublicoContainingIgnoreCase(publico));
-	}
-	
-	@GetMapping("/cidade/{cidade}")
-	public ResponseEntity<List<Tema>> GetByCidade (@PathVariable String cidade){
-		return ResponseEntity.ok(repository.findAllByCidadeContainingIgnoreCase(cidade));
-	}
-	
-	@GetMapping("/data/{data}")
-	public ResponseEntity<List<Tema>> GetByData (@PathVariable LocalDate data){
-		return ResponseEntity.ok(repository.findAllByData(data));
-	}
 	
 	@PostMapping
 	public ResponseEntity<Tema> Post(@RequestBody Tema post){
